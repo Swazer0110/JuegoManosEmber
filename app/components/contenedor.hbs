@@ -1,0 +1,53 @@
+{{yield}}
+<body>
+<div class="vv">
+    <div id="container">
+        <img src="assets/closed1.png" style="width:200px" id="1" {{on 'click' (fn this.showHand 1)}}>
+        <img src="assets/closed2.png" style="width:200px" id="2" {{on 'click' (fn this.showHand 2)}}>
+            <ul id="list">
+                <br>
+                <div id="rainbow">
+                <li >Puntos Jugador: <nobr id="Jugador">0</nobr></li>
+                <li>Puntos IA: <nobr id="IA">0</nobr></li>
+                </div>
+                <li><button id="r" type="button" {{on 'click' this.reiniciar}}>Reiniciar</button> <button id="r" type="button" {{on 'click' this.pista}}>Pista</button></li>
+            </ul>
+    </div>
+</div>
+</body>
+<style>
+img:hover{
+    width:400px;
+}
+li{
+    padding: 5px;
+}
+.vv{
+    display: flex;
+    height: 100vh;
+    
+}
+#rainbow{
+    background-image:linear-gradient(to right, red, orange, rgba(168, 168, 7, 0.568), green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 160s linear infinite;
+}
+@keyframes move{
+    to{
+        background-position: 4500vh;
+    }
+}
+#container{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    background-color: bisque;
+    padding: 30px;
+    width: 3000px;
+    align-items: center;
+    justify-content: center;
+}
+ul{
+    list-style-type: none;
+}
+</style>
